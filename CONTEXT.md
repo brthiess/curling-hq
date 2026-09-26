@@ -7,7 +7,7 @@ The competitive circuit as a circuit regular follows it: open bonspiels and cham
 ### Who plays
 
 **Circuit regular**:
-A fan who follows competitive curling all season and comes for the games on now, the standings, and the rankings. The person the site is designed for.
+A fan who follows competitive curling all season and comes for the scores, the linescores, the standings, and the rankings. The person the site is designed for.
 _Avoid_: casual fan, user, big-event fan
 
 **Big-event fan**:
@@ -66,10 +66,18 @@ _Avoid_: location, place
 One contest between two Event entries.
 _Avoid_: match, draw
 
-**Scoreline**:
-The end scores of one Game, and the listed final. An end that was not played is absent.
-_Avoid_: line score, box score
+**Score**:
+The current total for each side of a Game. This is what a fan scans across many Events.
+_Avoid_: linescore, running score
+
+**Linescore**:
+The end-by-end scores of one Game, and the listed final. An end that was not played is absent.
+_Avoid_: scoreline, box score
 
 **Standing**:
 An Event entry's wins, losses, and rank inside one Event.
 _Avoid_: ranking, world ranking
+
+**Playoff**:
+The games that decide an Event after the preliminary round.
+_Avoid_: bracket, knockout
