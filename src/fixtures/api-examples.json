@@ -1,0 +1,1057 @@
+{
+  "event_browse": {
+    "meta": {
+      "format": "curling-hq.api",
+      "schema_version": "1.0",
+      "generation_id": "g-demo-001",
+      "generated_at": "2026-10-02T18:00:00Z",
+      "scope": {
+        "mode": "archive",
+        "event_ids": null
+      },
+      "coverage": {
+        "state": "partial",
+        "limitations": [
+          "fixtures_not_extracted",
+          "bye_session_not_extracted",
+          "team_identity_unresolved",
+          "lineups_partial",
+          "person_names_incomplete"
+        ]
+      },
+      "refresh": {
+        "mode": "invoked",
+        "target_interval_seconds": null
+      },
+      "generation_retention": {
+        "minimum_hours_after_superseded": 24
+      },
+      "resolved_ids": {}
+    },
+    "data": [
+      {
+        "id": "src:cz:event:123",
+        "identity": "provisional",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z",
+        "evidence_ids": ["p-event"],
+        "field_evidence": {
+          "/": ["p-event"]
+        },
+        "missing": {
+          "/series_label": "not_extracted",
+          "/season": "not_extracted",
+          "/discipline": "not_extracted",
+          "/eligibility_category": "not_extracted",
+          "/location_label": "not_extracted"
+        },
+        "issues": [],
+        "title": "Example Open",
+        "series_label": null,
+        "season": null,
+        "discipline": null,
+        "eligibility_category": null,
+        "dates": {
+          "start": "2026-10-01",
+          "end": "2026-10-04",
+          "basis": "listed"
+        },
+        "location_label": null,
+        "entry_completeness": "partial",
+        "schedule_completeness": "partial"
+      },
+      {
+        "id": "src:cz:event:125",
+        "identity": "provisional",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z",
+        "evidence_ids": ["p-event-125"],
+        "field_evidence": {
+          "/": ["p-event-125"]
+        },
+        "missing": {
+          "/series_label": "not_extracted",
+          "/season": "not_extracted",
+          "/discipline": "not_extracted",
+          "/eligibility_category": "not_extracted",
+          "/location_label": "not_extracted"
+        },
+        "issues": [],
+        "title": "Example Second Open",
+        "series_label": null,
+        "season": null,
+        "discipline": null,
+        "eligibility_category": null,
+        "dates": {
+          "start": "2026-10-01",
+          "end": "2026-10-04",
+          "basis": "listed"
+        },
+        "location_label": null,
+        "entry_completeness": "partial",
+        "schedule_completeness": "partial"
+      }
+    ],
+    "included": {
+      "events": [],
+      "stages": [],
+      "draws": [],
+      "entries": [],
+      "teams": [],
+      "persons": []
+    },
+    "evidence": {
+      "p-event": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z"
+      },
+      "p-event-125": {
+        "source": "cz",
+        "source_scope": ["events", "125", "scores"],
+        "url": "https://www.curlingzone.com/event.php?eventid=125&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z"
+      }
+    },
+    "id_links": [],
+    "page": {
+      "limit": 50,
+      "has_more": false,
+      "next_cursor": null
+    },
+    "links": {
+      "self": "/v1/events?q=example&from=2026-10-01&to=2026-10-31&generation=g-demo-001&limit=50",
+      "next": null
+    }
+  },
+  "team_search": {
+    "meta": {
+      "format": "curling-hq.api",
+      "schema_version": "1.0",
+      "generation_id": "g-demo-001",
+      "generated_at": "2026-10-02T18:00:00Z",
+      "scope": {
+        "mode": "archive",
+        "event_ids": null
+      },
+      "coverage": {
+        "state": "partial",
+        "limitations": [
+          "fixtures_not_extracted",
+          "bye_session_not_extracted",
+          "team_identity_unresolved",
+          "lineups_partial",
+          "person_names_incomplete"
+        ]
+      },
+      "refresh": {
+        "mode": "invoked",
+        "target_interval_seconds": null
+      },
+      "generation_retention": {
+        "minimum_hours_after_superseded": 24
+      },
+      "resolved_ids": {}
+    },
+    "data": [
+      {
+        "kind": "event_entry",
+        "entry": {
+          "id": "src:cz:entry:123:45",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:58:00Z",
+          "evidence_ids": ["p-game"],
+          "field_evidence": {
+            "/": ["p-game"]
+          },
+          "missing": {
+            "/team_id": "identity_unresolved",
+            "/seed": "not_reported",
+            "/attachments": "not_extracted"
+          },
+          "issues": [],
+          "event_id": "src:cz:event:123",
+          "display_name": "Example North",
+          "team_id": null,
+          "seed": null,
+          "attachments": null,
+          "attachment_completeness": "unknown"
+        },
+        "event_id": "src:cz:event:123"
+      }
+    ],
+    "included": {
+      "events": [
+        {
+          "id": "src:cz:event:123",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:40:00Z",
+          "evidence_ids": ["p-event"],
+          "field_evidence": {
+            "/": ["p-event"]
+          },
+          "missing": {
+            "/series_label": "not_extracted",
+            "/season": "not_extracted",
+            "/discipline": "not_extracted",
+            "/eligibility_category": "not_extracted",
+            "/location_label": "not_extracted"
+          },
+          "issues": [],
+          "title": "Example Open",
+          "series_label": null,
+          "season": null,
+          "discipline": null,
+          "eligibility_category": null,
+          "dates": {
+            "start": "2026-10-01",
+            "end": "2026-10-04",
+            "basis": "listed"
+          },
+          "location_label": null,
+          "entry_completeness": "partial",
+          "schedule_completeness": "partial"
+        }
+      ],
+      "stages": [],
+      "draws": [],
+      "entries": [],
+      "teams": [],
+      "persons": []
+    },
+    "evidence": {
+      "p-event": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z"
+      },
+      "p-game": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores", "6"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&showdrawid=6&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:58:00Z"
+      }
+    },
+    "id_links": [],
+    "page": {
+      "limit": 50,
+      "has_more": false,
+      "next_cursor": null
+    },
+    "links": {
+      "self": "/v1/search/teams?q=example%20north&generation=g-demo-001&limit=50",
+      "next": null
+    }
+  },
+  "event_detail": {
+    "meta": {
+      "format": "curling-hq.api",
+      "schema_version": "1.0",
+      "generation_id": "g-demo-001",
+      "generated_at": "2026-10-02T18:00:00Z",
+      "scope": {
+        "mode": "archive",
+        "event_ids": null
+      },
+      "coverage": {
+        "state": "partial",
+        "limitations": [
+          "fixtures_not_extracted",
+          "bye_session_not_extracted",
+          "team_identity_unresolved",
+          "lineups_partial",
+          "person_names_incomplete"
+        ]
+      },
+      "refresh": {
+        "mode": "invoked",
+        "target_interval_seconds": null
+      },
+      "generation_retention": {
+        "minimum_hours_after_superseded": 24
+      },
+      "resolved_ids": {}
+    },
+    "data": {
+      "event": {
+        "id": "src:cz:event:123",
+        "identity": "provisional",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z",
+        "evidence_ids": ["p-event"],
+        "field_evidence": {
+          "/": ["p-event"]
+        },
+        "missing": {
+          "/series_label": "not_extracted",
+          "/season": "not_extracted",
+          "/discipline": "not_extracted",
+          "/eligibility_category": "not_extracted",
+          "/location_label": "not_extracted"
+        },
+        "issues": [],
+        "title": "Example Open",
+        "series_label": null,
+        "season": null,
+        "discipline": null,
+        "eligibility_category": null,
+        "dates": {
+          "start": "2026-10-01",
+          "end": "2026-10-04",
+          "basis": "listed"
+        },
+        "location_label": null,
+        "entry_completeness": "partial",
+        "schedule_completeness": "partial"
+      },
+      "entries": [
+        {
+          "id": "src:cz:entry:123:45",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:58:00Z",
+          "evidence_ids": ["p-game"],
+          "field_evidence": {
+            "/": ["p-game"]
+          },
+          "missing": {
+            "/team_id": "identity_unresolved",
+            "/seed": "not_reported",
+            "/attachments": "not_extracted"
+          },
+          "issues": [],
+          "event_id": "src:cz:event:123",
+          "display_name": "Example North",
+          "team_id": null,
+          "seed": null,
+          "attachments": null,
+          "attachment_completeness": "unknown"
+        },
+        {
+          "id": "src:cz:entry:123:46",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:58:00Z",
+          "evidence_ids": ["p-game"],
+          "field_evidence": {
+            "/": ["p-game"]
+          },
+          "missing": {
+            "/team_id": "identity_unresolved",
+            "/seed": "not_reported",
+            "/attachments": "not_extracted"
+          },
+          "issues": [],
+          "event_id": "src:cz:event:123",
+          "display_name": "Example South",
+          "team_id": null,
+          "seed": null,
+          "attachments": null,
+          "attachment_completeness": "unknown"
+        }
+      ],
+      "draws": [],
+      "fixtures": [],
+      "byes": [],
+      "related_pages": {
+        "entries": {
+          "limit": 50,
+          "has_more": false,
+          "next_cursor": null,
+          "next": null
+        },
+        "draws": {
+          "limit": 50,
+          "has_more": false,
+          "next_cursor": null,
+          "next": null
+        }
+      }
+    },
+    "included": {
+      "events": [],
+      "stages": [],
+      "draws": [],
+      "entries": [],
+      "teams": [],
+      "persons": []
+    },
+    "evidence": {
+      "p-event": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z"
+      },
+      "p-game": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores", "6"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&showdrawid=6&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:58:00Z"
+      }
+    },
+    "id_links": [],
+    "page": null,
+    "links": {
+      "self": "/v1/events/src%3Acz%3Aevent%3A123?generation=g-demo-001&limit=50",
+      "next": null,
+      "games": "/v1/events/src%3Acz%3Aevent%3A123/games?generation=g-demo-001&limit=50"
+    }
+  },
+  "event_games": {
+    "meta": {
+      "format": "curling-hq.api",
+      "schema_version": "1.0",
+      "generation_id": "g-demo-001",
+      "generated_at": "2026-10-02T18:00:00Z",
+      "scope": {
+        "mode": "archive",
+        "event_ids": null
+      },
+      "coverage": {
+        "state": "partial",
+        "limitations": [
+          "fixtures_not_extracted",
+          "bye_session_not_extracted",
+          "team_identity_unresolved",
+          "lineups_partial",
+          "person_names_incomplete"
+        ]
+      },
+      "refresh": {
+        "mode": "invoked",
+        "target_interval_seconds": null
+      },
+      "generation_retention": {
+        "minimum_hours_after_superseded": 24
+      },
+      "resolved_ids": {}
+    },
+    "data": [
+      {
+        "id": "src:cz:game:123:6:789",
+        "identity": "provisional",
+        "event_id": "src:cz:event:123",
+        "stage_id": null,
+        "draw_id": null,
+        "scheduled_time": {
+          "local_date": null,
+          "local_time": "09:00",
+          "month_day": "10-02",
+          "timezone": null,
+          "utc_offset": null,
+          "instant": null
+        },
+        "sheet_label": "A",
+        "venue_label": null,
+        "entry_ids": ["src:cz:entry:123:45", "src:cz:entry:123:46"],
+        "state": "open",
+        "winner_entry_id": null,
+        "scoreline": {
+          "ends": [
+            [1, 0],
+            [0, 0],
+            [0, 2]
+          ],
+          "played_end_count": 3,
+          "totals": [1, 2],
+          "totals_basis": "sum_of_ends",
+          "listed_final": null
+        },
+        "lineups": [
+          {
+            "person_ids": ["src:cz:person:456"],
+            "expected_person_count": null,
+            "completeness": "partial",
+            "deliveries": null,
+            "duties": [
+              {
+                "person_id": "src:cz:person:456",
+                "duty": "skip",
+                "ends": null
+              }
+            ]
+          },
+          null
+        ],
+        "last_successful_observed_at": "2026-10-02T17:58:00Z",
+        "evidence_ids": ["p-game", "p-lineup"],
+        "field_evidence": {
+          "/scoreline": ["p-game"],
+          "/state": ["p-game"],
+          "/lineups/0": ["p-lineup"],
+          "/": ["p-game"]
+        },
+        "missing": {
+          "/stage_id": "not_extracted",
+          "/draw_id": "identity_unresolved",
+          "/venue_label": "not_reported",
+          "/scheduled_time/local_date": "not_reported",
+          "/scheduled_time/timezone": "not_reported",
+          "/scheduled_time/utc_offset": "not_reported",
+          "/scheduled_time/instant": "not_reported",
+          "/winner_entry_id": "not_applicable",
+          "/scoreline/listed_final": "not_reported",
+          "/lineups/0/expected_person_count": "unknown",
+          "/lineups/0/deliveries": "invalid_evidence",
+          "/lineups/1": "not_reported"
+        },
+        "issues": ["lineup_incomplete", "delivery_slots_unverified"]
+      }
+    ],
+    "included": {
+      "events": [
+        {
+          "id": "src:cz:event:123",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:40:00Z",
+          "evidence_ids": ["p-event"],
+          "field_evidence": {
+            "/": ["p-event"]
+          },
+          "missing": {
+            "/series_label": "not_extracted",
+            "/season": "not_extracted",
+            "/discipline": "not_extracted",
+            "/eligibility_category": "not_extracted",
+            "/location_label": "not_extracted"
+          },
+          "issues": [],
+          "title": "Example Open",
+          "series_label": null,
+          "season": null,
+          "discipline": null,
+          "eligibility_category": null,
+          "dates": {
+            "start": "2026-10-01",
+            "end": "2026-10-04",
+            "basis": "listed"
+          },
+          "location_label": null,
+          "entry_completeness": "partial",
+          "schedule_completeness": "partial"
+        }
+      ],
+      "stages": [],
+      "draws": [],
+      "entries": [
+        {
+          "id": "src:cz:entry:123:45",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:58:00Z",
+          "evidence_ids": ["p-game"],
+          "field_evidence": {
+            "/": ["p-game"]
+          },
+          "missing": {
+            "/team_id": "identity_unresolved",
+            "/seed": "not_reported",
+            "/attachments": "not_extracted"
+          },
+          "issues": [],
+          "event_id": "src:cz:event:123",
+          "display_name": "Example North",
+          "team_id": null,
+          "seed": null,
+          "attachments": null,
+          "attachment_completeness": "unknown"
+        },
+        {
+          "id": "src:cz:entry:123:46",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:58:00Z",
+          "evidence_ids": ["p-game"],
+          "field_evidence": {
+            "/": ["p-game"]
+          },
+          "missing": {
+            "/team_id": "identity_unresolved",
+            "/seed": "not_reported",
+            "/attachments": "not_extracted"
+          },
+          "issues": [],
+          "event_id": "src:cz:event:123",
+          "display_name": "Example South",
+          "team_id": null,
+          "seed": null,
+          "attachments": null,
+          "attachment_completeness": "unknown"
+        }
+      ],
+      "teams": [],
+      "persons": [
+        {
+          "id": "src:cz:person:456",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-01T16:00:00Z",
+          "evidence_ids": ["p-lineup"],
+          "field_evidence": {
+            "/": ["p-lineup"]
+          },
+          "missing": {
+            "/display_name": "not_reported"
+          },
+          "issues": [],
+          "display_name": null
+        }
+      ]
+    },
+    "evidence": {
+      "p-event": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z"
+      },
+      "p-game": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores", "6"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&showdrawid=6&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:58:00Z"
+      },
+      "p-lineup": {
+        "source": "cz",
+        "source_scope": ["events", "123", "draws", "6", "games", "789"],
+        "url": "https://www.curlingzone.com/game.php?showgameid=789",
+        "last_successful_observed_at": "2026-10-01T16:00:00Z"
+      }
+    },
+    "id_links": [],
+    "page": {
+      "limit": 50,
+      "has_more": false,
+      "next_cursor": null
+    },
+    "links": {
+      "self": "/v1/events/src%3Acz%3Aevent%3A123/games?generation=g-demo-001&limit=50",
+      "next": null
+    }
+  },
+  "game_detail": {
+    "meta": {
+      "format": "curling-hq.api",
+      "schema_version": "1.0",
+      "generation_id": "g-demo-001",
+      "generated_at": "2026-10-02T18:00:00Z",
+      "scope": {
+        "mode": "archive",
+        "event_ids": null
+      },
+      "coverage": {
+        "state": "partial",
+        "limitations": [
+          "fixtures_not_extracted",
+          "bye_session_not_extracted",
+          "team_identity_unresolved",
+          "lineups_partial",
+          "person_names_incomplete"
+        ]
+      },
+      "refresh": {
+        "mode": "invoked",
+        "target_interval_seconds": null
+      },
+      "generation_retention": {
+        "minimum_hours_after_superseded": 24
+      },
+      "resolved_ids": {}
+    },
+    "data": {
+      "id": "src:cz:game:123:6:789",
+      "identity": "provisional",
+      "event_id": "src:cz:event:123",
+      "stage_id": null,
+      "draw_id": null,
+      "scheduled_time": {
+        "local_date": null,
+        "local_time": "09:00",
+        "month_day": "10-02",
+        "timezone": null,
+        "utc_offset": null,
+        "instant": null
+      },
+      "sheet_label": "A",
+      "venue_label": null,
+      "entry_ids": ["src:cz:entry:123:45", "src:cz:entry:123:46"],
+      "state": "open",
+      "winner_entry_id": null,
+      "scoreline": {
+        "ends": [
+          [1, 0],
+          [0, 0],
+          [0, 2]
+        ],
+        "played_end_count": 3,
+        "totals": [1, 2],
+        "totals_basis": "sum_of_ends",
+        "listed_final": null
+      },
+      "lineups": [
+        {
+          "person_ids": ["src:cz:person:456"],
+          "expected_person_count": null,
+          "completeness": "partial",
+          "deliveries": null,
+          "duties": [
+            {
+              "person_id": "src:cz:person:456",
+              "duty": "skip",
+              "ends": null
+            }
+          ]
+        },
+        null
+      ],
+      "last_successful_observed_at": "2026-10-02T17:58:00Z",
+      "evidence_ids": ["p-game", "p-lineup"],
+      "field_evidence": {
+        "/scoreline": ["p-game"],
+        "/state": ["p-game"],
+        "/lineups/0": ["p-lineup"],
+        "/": ["p-game"]
+      },
+      "missing": {
+        "/stage_id": "not_extracted",
+        "/draw_id": "identity_unresolved",
+        "/venue_label": "not_reported",
+        "/scheduled_time/local_date": "not_reported",
+        "/scheduled_time/timezone": "not_reported",
+        "/scheduled_time/utc_offset": "not_reported",
+        "/scheduled_time/instant": "not_reported",
+        "/winner_entry_id": "not_applicable",
+        "/scoreline/listed_final": "not_reported",
+        "/lineups/0/expected_person_count": "unknown",
+        "/lineups/0/deliveries": "invalid_evidence",
+        "/lineups/1": "not_reported"
+      },
+      "issues": ["lineup_incomplete", "delivery_slots_unverified"]
+    },
+    "included": {
+      "events": [
+        {
+          "id": "src:cz:event:123",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:40:00Z",
+          "evidence_ids": ["p-event"],
+          "field_evidence": {
+            "/": ["p-event"]
+          },
+          "missing": {
+            "/series_label": "not_extracted",
+            "/season": "not_extracted",
+            "/discipline": "not_extracted",
+            "/eligibility_category": "not_extracted",
+            "/location_label": "not_extracted"
+          },
+          "issues": [],
+          "title": "Example Open",
+          "series_label": null,
+          "season": null,
+          "discipline": null,
+          "eligibility_category": null,
+          "dates": {
+            "start": "2026-10-01",
+            "end": "2026-10-04",
+            "basis": "listed"
+          },
+          "location_label": null,
+          "entry_completeness": "partial",
+          "schedule_completeness": "partial"
+        }
+      ],
+      "stages": [],
+      "draws": [],
+      "entries": [
+        {
+          "id": "src:cz:entry:123:45",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:58:00Z",
+          "evidence_ids": ["p-game"],
+          "field_evidence": {
+            "/": ["p-game"]
+          },
+          "missing": {
+            "/team_id": "identity_unresolved",
+            "/seed": "not_reported",
+            "/attachments": "not_extracted"
+          },
+          "issues": [],
+          "event_id": "src:cz:event:123",
+          "display_name": "Example North",
+          "team_id": null,
+          "seed": null,
+          "attachments": null,
+          "attachment_completeness": "unknown"
+        },
+        {
+          "id": "src:cz:entry:123:46",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-02T17:58:00Z",
+          "evidence_ids": ["p-game"],
+          "field_evidence": {
+            "/": ["p-game"]
+          },
+          "missing": {
+            "/team_id": "identity_unresolved",
+            "/seed": "not_reported",
+            "/attachments": "not_extracted"
+          },
+          "issues": [],
+          "event_id": "src:cz:event:123",
+          "display_name": "Example South",
+          "team_id": null,
+          "seed": null,
+          "attachments": null,
+          "attachment_completeness": "unknown"
+        }
+      ],
+      "teams": [],
+      "persons": [
+        {
+          "id": "src:cz:person:456",
+          "identity": "provisional",
+          "last_successful_observed_at": "2026-10-01T16:00:00Z",
+          "evidence_ids": ["p-lineup"],
+          "field_evidence": {
+            "/": ["p-lineup"]
+          },
+          "missing": {
+            "/display_name": "not_reported"
+          },
+          "issues": [],
+          "display_name": null
+        }
+      ]
+    },
+    "evidence": {
+      "p-event": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z"
+      },
+      "p-game": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores", "6"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&showdrawid=6&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:58:00Z"
+      },
+      "p-lineup": {
+        "source": "cz",
+        "source_scope": ["events", "123", "draws", "6", "games", "789"],
+        "url": "https://www.curlingzone.com/game.php?showgameid=789",
+        "last_successful_observed_at": "2026-10-01T16:00:00Z"
+      }
+    },
+    "id_links": [],
+    "page": null,
+    "links": {
+      "self": "/v1/games/src%3Acz%3Agame%3A123%3A6%3A789?generation=g-demo-001",
+      "next": null,
+      "event": "/v1/events/src%3Acz%3Aevent%3A123?generation=g-demo-001"
+    }
+  },
+  "unsupported_filter": {
+    "error": {
+      "code": "unsupported_filter",
+      "message": "discipline filtering is unavailable in v1 launch data.",
+      "parameter": "discipline",
+      "retryable": false
+    },
+    "meta": {
+      "schema_version": "1.0",
+      "generation_id": "g-demo-001"
+    },
+    "links": {
+      "restart": null
+    }
+  },
+  "generation_expired": {
+    "error": {
+      "code": "generation_expired",
+      "message": "Restart browsing on the current generation.",
+      "parameter": "generation",
+      "retryable": false
+    },
+    "meta": {
+      "schema_version": "1.0",
+      "generation_id": "g-demo-old"
+    },
+    "links": {
+      "restart": "/v1/events?q=example&limit=50"
+    }
+  },
+  "event_browse_first_page": {
+    "meta": {
+      "format": "curling-hq.api",
+      "schema_version": "1.0",
+      "generation_id": "g-demo-001",
+      "generated_at": "2026-10-02T18:00:00Z",
+      "scope": {
+        "mode": "archive",
+        "event_ids": null
+      },
+      "coverage": {
+        "state": "partial",
+        "limitations": [
+          "fixtures_not_extracted",
+          "bye_session_not_extracted",
+          "team_identity_unresolved",
+          "lineups_partial",
+          "person_names_incomplete"
+        ]
+      },
+      "refresh": {
+        "mode": "invoked",
+        "target_interval_seconds": null
+      },
+      "generation_retention": {
+        "minimum_hours_after_superseded": 24
+      },
+      "resolved_ids": {}
+    },
+    "data": [
+      {
+        "id": "src:cz:event:123",
+        "identity": "provisional",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z",
+        "evidence_ids": ["p-event"],
+        "field_evidence": {
+          "/": ["p-event"]
+        },
+        "missing": {
+          "/series_label": "not_extracted",
+          "/season": "not_extracted",
+          "/discipline": "not_extracted",
+          "/eligibility_category": "not_extracted",
+          "/location_label": "not_extracted"
+        },
+        "issues": [],
+        "title": "Example Open",
+        "series_label": null,
+        "season": null,
+        "discipline": null,
+        "eligibility_category": null,
+        "dates": {
+          "start": "2026-10-01",
+          "end": "2026-10-04",
+          "basis": "listed"
+        },
+        "location_label": null,
+        "entry_completeness": "partial",
+        "schedule_completeness": "partial"
+      }
+    ],
+    "included": {
+      "events": [],
+      "stages": [],
+      "draws": [],
+      "entries": [],
+      "teams": [],
+      "persons": []
+    },
+    "evidence": {
+      "p-event": {
+        "source": "cz",
+        "source_scope": ["events", "123", "scores"],
+        "url": "https://www.curlingzone.com/event.php?eventid=123&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z"
+      }
+    },
+    "id_links": [],
+    "page": {
+      "limit": 1,
+      "has_more": true,
+      "next_cursor": "DEMO_OPAQUE_SIGNED_CURSOR"
+    },
+    "links": {
+      "self": "/v1/events?q=example&from=2026-10-01&to=2026-10-31&generation=g-demo-001&limit=1",
+      "next": "/v1/events?q=example&from=2026-10-01&to=2026-10-31&generation=g-demo-001&limit=1&cursor=DEMO_OPAQUE_SIGNED_CURSOR"
+    }
+  },
+  "event_browse_second_page": {
+    "meta": {
+      "format": "curling-hq.api",
+      "schema_version": "1.0",
+      "generation_id": "g-demo-001",
+      "generated_at": "2026-10-02T18:00:00Z",
+      "scope": {
+        "mode": "archive",
+        "event_ids": null
+      },
+      "coverage": {
+        "state": "partial",
+        "limitations": [
+          "fixtures_not_extracted",
+          "bye_session_not_extracted",
+          "team_identity_unresolved",
+          "lineups_partial",
+          "person_names_incomplete"
+        ]
+      },
+      "refresh": {
+        "mode": "invoked",
+        "target_interval_seconds": null
+      },
+      "generation_retention": {
+        "minimum_hours_after_superseded": 24
+      },
+      "resolved_ids": {}
+    },
+    "data": [
+      {
+        "id": "src:cz:event:125",
+        "identity": "provisional",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z",
+        "evidence_ids": ["p-event-125"],
+        "field_evidence": {
+          "/": ["p-event-125"]
+        },
+        "missing": {
+          "/series_label": "not_extracted",
+          "/season": "not_extracted",
+          "/discipline": "not_extracted",
+          "/eligibility_category": "not_extracted",
+          "/location_label": "not_extracted"
+        },
+        "issues": [],
+        "title": "Example Second Open",
+        "series_label": null,
+        "season": null,
+        "discipline": null,
+        "eligibility_category": null,
+        "dates": {
+          "start": "2026-10-01",
+          "end": "2026-10-04",
+          "basis": "listed"
+        },
+        "location_label": null,
+        "entry_completeness": "partial",
+        "schedule_completeness": "partial"
+      }
+    ],
+    "included": {
+      "events": [],
+      "stages": [],
+      "draws": [],
+      "entries": [],
+      "teams": [],
+      "persons": []
+    },
+    "evidence": {
+      "p-event-125": {
+        "source": "cz",
+        "source_scope": ["events", "125", "scores"],
+        "url": "https://www.curlingzone.com/event.php?eventid=125&view=Scores",
+        "last_successful_observed_at": "2026-10-02T17:40:00Z"
+      }
+    },
+    "id_links": [],
+    "page": {
+      "limit": 1,
+      "has_more": false,
+      "next_cursor": null
+    },
+    "links": {
+      "self": "/v1/events?q=example&from=2026-10-01&to=2026-10-31&generation=g-demo-001&limit=1&cursor=DEMO_OPAQUE_SIGNED_CURSOR",
+      "next": null
+    }
+  }
+}

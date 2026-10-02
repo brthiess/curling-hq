@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: curling-hq
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: CURLING_API_URL
+        sync: false
+      - key: CURLING_DEMO_MODE
+        value: false
