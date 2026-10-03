@@ -35,3 +35,21 @@ These are implementation observations, not product decisions. Confirm the public
 Read the response in the chat "Define Curling HQ publication schema" and `curling-crawler-ai/docs/curling-hq-publication-contract-v1.md`. This is a documentation proposal, not an implemented publisher. It distinguishes fixtures from games, uses provisional source-scoped IDs, and defines generation-consistent records, provenance, missingness, scorelines, and lineups.
 
 Additional launch constraints: upcoming fixture extraction currently loses slot identity/participants; lineup cards may include non-playing alternates; automatic polling and latest-read score correction are still planned. Do not advertise upcoming coverage or confirmed playing participation beyond evidence. Prefer publishing valid existing scores and entries first, with supported lineup details and clear unknowns.
+
+## Real-data integration — October 2, 2026
+
+The user authorized changes to both sibling projects after moving them into
+C:/Users/brthi/Projects/crawler-and-hq. The publisher and read-only API now serve
+existing archive data. HQ uses that service locally; synthetic fixtures remain
+available only for explicit/demo development use. The initial scoreboard filters
+for Events with actual Games; all-event browsing remains accessible.
+Names come from stored game-card HTML; lineups remain partial and delivery slots
+unverified. Readiness checks upstream availability. Render configurations and a
+prepared-data-only release bundle are ready; no public deployment was performed.
+
+
+## Recent scoreboard and latest scored draw (2026-10-03)
+
+The default homepage lists all published events with score activity in the past week, ordered by their most recent scored game time. Search and explicit date/archive browsing retain pagination. Both homepage event blocks and event pages default to the latest source draw containing an accepted scoreline; future scheduled draws without scores do not advance this selection. Visitors can select an older draw or All draws, and those manual choices survive generation changes. Latest remains automatic as new draws receive scores.
+
+Activity prefers reported game clocks with event date context and known timezone offsets. Unknown source timezones remain explicitly unconverted; those clocks have approximate ordering against events in other timezones. Missing clocks use score observation evidence bounded to the event date range, so rereading a historical final does not make it a current event. Publication time is not score activity time.

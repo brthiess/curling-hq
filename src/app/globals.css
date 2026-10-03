@@ -1220,3 +1220,121 @@ footer {
     transition: none !important;
   }
 }
+
+/* Compact result previews and stable mobile search-card alignment. */
+@media (min-width: 1200px) {
+  .event-block .game-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.score-scroll-hint {
+  display: none;
+}
+@media (max-width: 680px) {
+  .search-results > a {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    align-items: start;
+  }
+  .search-results > a > div {
+    min-width: 0;
+  }
+  .search-results .text-link {
+    grid-column: 2;
+    margin-left: 0;
+  }
+  .score-scroll-hint {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    margin: 8px 0 12px;
+  }
+}
+
+.refresh-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #dce4e7;
+  color: #536772;
+  font-size: 0.78rem;
+}
+.refresh-bar > span {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.refresh-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #487d6a;
+  flex-shrink: 0;
+}
+.refresh-bar button {
+  border: 1px solid #dce4e7;
+  border-radius: 7px;
+  padding: 0.45rem 0.7rem;
+  background: #fff;
+  color: #183342;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.refresh-bar button:hover {
+  border-color: #829aa7;
+}
+.refresh-bar button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.refresh-delayed .refresh-dot {
+  background: #b47b29;
+}
+.status.delayed {
+  background: #fbefda;
+  color: #865d20;
+}
+@media (max-width: 540px) {
+  .refresh-bar {
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+  }
+  .refresh-bar > span {
+    line-height: 1.5;
+  }
+  .refresh-bar button {
+    padding: 0.35rem 0.5rem;
+  }
+}
+
+.draw-select {
+  margin: 0 0 1rem;
+  max-width: 220px;
+}
+.draw-select label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.45rem;
+  color: var(--muted);
+}
+.draw-select select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cad5da;
+  border-radius: 3px;
+  background: white;
+  color: var(--navy);
+  font: inherit;
+}
+.filter-form .draw-select {
+  margin-bottom: 0;
+  max-width: none;
+}

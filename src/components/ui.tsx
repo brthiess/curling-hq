@@ -1,3 +1,4 @@
+import { ScoreStatus } from "./live-scores";
 import Link from "next/link";
 import { ApiError } from "@/lib/api";
 import {
@@ -125,9 +126,11 @@ export function GameCard({ game, context }: { game: Game; context: Context }) {
       href={detailUrl("games", game.id, context.meta.generation_id)}
     >
       <div className="card-meta">
-        <span className={`status ${game.state === "open" ? "open" : ""}`}>
-          {stateLabel(game.state)}
-        </span>
+        <ScoreStatus
+          open={game.state === "open"}
+          at={scoreObserved(game, context)}
+          label={stateLabel(game.state)}
+        />
         <span>
           {game.sheet_label ? `Sheet ${game.sheet_label}` : "Sheet unavailable"}
         </span>
@@ -215,8 +218,11 @@ export function ScoreTable({
           </tbody>
         </table>
       </div>
+      <p className="score-scroll-hint">
+        Swipe the score table to see every end →
+      </p>
       <div className="score-foot">
-        <span>Only played ends are shown. Blank ends score 0–0.</span>
+        <span>Only played ends are shown.</span>
         <Checked at={scoreObserved(game, context)} label="Score checked" />
       </div>
     </div>
@@ -226,12 +232,13 @@ export function Lineups({ game, context }: { game: Game; context: Context }) {
   return (
     <section>
       <div className="section-heading">
-        <h2>Who’s playing</h2>
-        <span>Available game lineups</span>
+        <h2>Teams & players</h2>
+        <span>Players listed for this game</span>
       </div>
       <div className="lineup-grid">
         {game.entry_ids.map((id, side) => {
           const lineup = game.lineups[side];
+          const profile = game.team_profiles?.[side];
           return (
             <article className="lineup" key={id}>
               <h3>
@@ -275,9 +282,31 @@ export function Lineups({ game, context }: { game: Game; context: Context }) {
                     label="Lineup checked"
                   />
                 </>
+              ) : profile?.members.length ? (
+                <>
+                  <ul>
+                    {profile.members.map((member, index) => (
+                      <li
+                        key={
+                          member.person_id ?? `${member.display_name}-${index}`
+                        }
+                      >
+                        <span>{member.display_name}</span>
+                        <small>{member.source_position}</small>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="lineup-note">
+                    Team profile shown by CurlingZone for this game.
+                  </p>
+                  <Checked
+                    at={fieldObserved(game, context, `/team_profiles/${side}`)}
+                    label="Team checked"
+                  />
+                </>
               ) : (
                 <p className="lineup-note">
-                  Playing lineup not reported for this game.
+                  Players not reported for this game.
                 </p>
               )}
             </article>
@@ -299,8 +328,12 @@ export function GameFacts({ game, context }: { game: Game; context: Context }) {
       <div>
         <dt>Draw / stage</dt>
         <dd>
-          {[draw?.label, stage?.name].filter(Boolean).join(" · ") ||
-            "Not reported"}
+          {[
+            draw?.label ?? game.source_draw_label,
+            stage?.name ?? game.source_stage_label,
+          ]
+            .filter(Boolean)
+            .join(" · ") || "Not reported"}
         </dd>
       </div>
       <div>
@@ -308,8 +341,8 @@ export function GameFacts({ game, context }: { game: Game; context: Context }) {
         <dd>{game.sheet_label ?? "Not reported"}</dd>
       </div>
       <div>
-        <dt>Venue</dt>
-        <dd>{game.venue_label ?? "Not reported"}</dd>
+        <dt>{game.venue_label ? "Venue" : "Location"}</dt>
+        <dd>{game.venue_label ?? game.location_label ?? "Not reported"}</dd>
       </div>
     </dl>
   );

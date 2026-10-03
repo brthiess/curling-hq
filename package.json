@@ -7,10 +7,11 @@
     "build": "next build --webpack",
     "start": "next start --hostname 0.0.0.0",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/contract.test.ts tests/api.test.ts",
+    "test": "tsx --test tests/contract.test.ts tests/api.test.ts tests/live.test.ts tests/browse.test.ts",
     "format": "prettier --write src scripts tests next.config.ts tsconfig.json package.json render.yaml",
     "format:check": "prettier --check src scripts tests next.config.ts tsconfig.json package.json render.yaml",
-    "check:api": "tsx scripts/check-api.ts"
+    "check:api": "tsx scripts/check-api.ts",
+    "check:preview": "tsx scripts/verify-preview.ts"
   },
   "dependencies": {
     "next": "^16.0.0",
@@ -22,6 +23,7 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "playwright": "^1.63.0",
     "prettier": "^3.9.9",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0"

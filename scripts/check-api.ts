@@ -7,19 +7,24 @@ process.env.CURLING_DEMO_MODE = "false";
 async function main() {
   if (!process.env.CURLING_API_URL) {
     console.error(
-      "Set CURLING_API_URL in .env.local to the crawler API URL ending in /v1. The crawler publisher/API still needs implementation.",
+      "Set CURLING_API_URL in .env.local to the crawler API URL ending in /v1. Start the crawler read-only API first.",
     );
     process.exitCode = 1;
     return;
   }
-  const first = await api.events({ limit: "1" });
+  const browse = {
+    has_games: "true",
+    limit: "1",
+    to: new Date().toISOString().slice(0, 10),
+  };
+  const first = await api.events(browse);
   const generation = first.meta.generation_id;
   console.log(
     `Event browsing validated. Dataset: ${generation}. Coverage: ${first.meta.coverage.state}.`,
   );
   if (first.page?.has_more && first.page.next_cursor) {
     await api.events({
-      limit: "1",
+      ...browse,
       cursor: first.page.next_cursor,
       generation,
     });

@@ -52,3 +52,38 @@ test("lineup evidence retains its independent older freshness", () => {
     "2026-10-01T16:00:00Z",
   );
 });
+
+test("current game team profiles preserve listed names, positions and source timezone", () => {
+  const payload = structuredClone(examples.game_detail) as Record<string, any>;
+  payload.data.team_profiles = [
+    {
+      basis: "team_profile",
+      members: [
+        {
+          person_id: null,
+          display_name: "Philipp Hoesli",
+          source_position: "Fourth",
+          kind: "team_member",
+        },
+      ],
+    },
+    null,
+  ];
+  payload.data.source_draw_label = "Draw 7";
+  payload.data.source_stage_label = "A-Semifinal";
+  payload.data.location_label = "Vernon, BC";
+  payload.data.scheduled_time = {
+    local_date: null,
+    month_day: "10-02",
+    local_time: "16:00",
+    timezone: "PDT",
+    utc_offset: null,
+    instant: null,
+  };
+  const g = gameResponse.parse(payload).data;
+  assert.equal(g.team_profiles?.[0]?.members[0].display_name, "Philipp Hoesli");
+  assert.equal(g.team_profiles?.[0]?.members[0].source_position, "Fourth");
+  assert.equal(g.source_stage_label, "A-Semifinal");
+  assert.equal(clock(g), "10-02 · 16:00 PDT");
+  assert.equal(g.scheduled_time?.instant, null);
+});

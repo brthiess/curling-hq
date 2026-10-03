@@ -7,7 +7,15 @@ const base = z.object({
   issues: z.array(z.string()),
 });
 export const eventSchema = base.extend({
+  latest_scored_draw_id: z.string().nullable().optional(),
+  score_activity: z
+    .object({ at: z.string(), basis: z.string() })
+    .nullable()
+    .optional(),
   title: z.string().nullable(),
+  source_draws: z
+    .array(z.object({ id: z.string(), label: z.string() }))
+    .optional(),
   location_label: z.string().nullable(),
   dates: z
     .object({ start: z.iso.date(), end: z.iso.date(), basis: z.string() })
@@ -39,6 +47,28 @@ export const gameSchema = base.extend({
       instant: z.string().nullable(),
     })
     .nullable(),
+  source_draw_id: z.string().nullable().optional(),
+  source_draw_label: z.string().nullable().optional(),
+  source_stage_label: z.string().nullable().optional(),
+  location_label: z.string().nullable().optional(),
+  team_profiles: z
+    .array(
+      z
+        .object({
+          basis: z.literal("team_profile"),
+          members: z.array(
+            z.object({
+              person_id: z.string().nullable(),
+              display_name: z.string(),
+              source_position: z.string(),
+              kind: z.string(),
+            }),
+          ),
+        })
+        .nullable(),
+    )
+    .length(2)
+    .optional(),
   scoreline: z
     .object({
       ends: z

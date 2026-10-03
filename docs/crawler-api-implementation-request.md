@@ -7,3 +7,9 @@ The frontend uses these routes: `/v1/events` with `q`, `from`, `to`, `limit`, `c
 First publish current events, entry labels, accepted scores, and supported playing lineups. Explicitly declare missing fixtures and partial rosters; no new sources or live scheduler are required for launch. Preserve blank/extra ends and unknown timezones. Serve prepared consumer data only, without request-triggered crawling or archive access. Implement the contract's pagination, ID/alias handling, retained generations, validation, and error semantics, with meaningful integration tests.
 
 Provide a Render-compatible service configuration, a real-data preparation command, and the deployed or locally runnable API base URL ending in `/v1`. Keep preparation failures from replacing the last valid publication. Tell us which dataset is actually published and which capabilities remain unavailable.
+
+## Status — October 2, 2026
+
+Implemented in the sibling crawler: curling_api.prepare, curling_api.app,
+release packaging and Render configuration. See its docs/api-operations.md.
+This file records the original handoff request, not pending work.
